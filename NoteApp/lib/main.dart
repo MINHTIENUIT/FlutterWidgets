@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:NoteApp/login_page.dart';
+import 'package:NoteApp/profile_page.dart';
 import 'package:NoteApp/sign_up_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -37,7 +38,8 @@ class MyApp extends StatelessWidget {
       home: MyHomePage(title: 'Flutter Widgets'),
       routes: {
         LoginPage.route: (context) => LoginPage(),
-        SignUpPage.route: (context) => SignUpPage()
+        SignUpPage.route: (context) => SignUpPage(),
+        ProfilePage.route: (context) => ProfilePage()
       },
     );
   }
@@ -62,7 +64,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final widgets = [LoginPage.route, SignUpPage.route ];
+  final widgets = [LoginPage.route, SignUpPage.route, ProfilePage.route];
 
 
   @override
