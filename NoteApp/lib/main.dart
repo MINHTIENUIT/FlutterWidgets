@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:NoteApp/edit_profile_page.dart';
 import 'package:NoteApp/login_page.dart';
 import 'package:NoteApp/profile_page.dart';
 import 'package:NoteApp/sign_up_page.dart';
@@ -39,7 +40,8 @@ class MyApp extends StatelessWidget {
       routes: {
         LoginPage.route: (context) => LoginPage(),
         SignUpPage.route: (context) => SignUpPage(),
-        ProfilePage.route: (context) => ProfilePage()
+        ProfilePage.route: (context) => ProfilePage(),
+        EditProfile.route: (context) => EditProfile()
       },
     );
   }

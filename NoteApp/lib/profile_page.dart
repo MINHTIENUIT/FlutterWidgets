@@ -1,3 +1,4 @@
+import 'package:NoteApp/edit_profile_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
@@ -30,7 +31,9 @@ class _ProfilePageState extends State<ProfilePage> {
                   shape: CircleBorder(),
                   color: Colors.white,
                   child: Icon(Icons.edit, color: Colors.deepPurpleAccent,),
-                  onPressed: (){},
+                  onPressed: (){
+                    Navigator.of(context).pushNamed(EditProfile.route);
+                    },
                 ),
               ],
             ),
