@@ -3,7 +3,7 @@ import 'package:flutter/rendering.dart';
 
 class ProfilePage extends StatefulWidget {
   static final String route = '/ProfilePage';
-  final String avatarImageSrc = 'https://lh3.googleusercontent.com/proxy/SXHgZlmK-wTBLaOWzEpgViP4-z6-y3SINIwjiwn-_c2DwXJbuXhgFtnGitgK6kJVsJta33s12AyxqT11FuPaLl_Niyw2gZ6Iw7MhF_n1B2GNJQbQ60QoVjvujtni2F0';
+  final String avatarImageSrc = 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSGCQBY8CKewcbtUAnvzqmqXhnb8jXkkdhHyA&usqp=CAU';
   final String backgroundImageSrc = 'https://image.freepik.com/free-vector/global-technology_46706-709.jpg';
   final String title = "Van Minh Tien";
   final String subTitle = "Engineering";
@@ -31,7 +31,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   color: Colors.white,
                   child: Icon(Icons.edit, color: Colors.deepPurpleAccent,),
                   onPressed: (){},
-                )
+                ),
               ],
             ),
             SizedBox(height: 10,),
@@ -147,17 +147,17 @@ class UserInfo extends StatelessWidget {
                                 horizontal: 12, vertical: 4),
                             leading: Icon(Icons.my_location),
                             title: Text("Location"),
-                            subtitle: Text("Kathmandu"),
+                            subtitle: Text("Ho Chi Minh City"),
                           ),
                           ListTile(
                             leading: Icon(Icons.email),
                             title: Text("Email"),
-                            subtitle: Text("sudeptech@gmail.com"),
+                            subtitle: Text("vanminhtien96@gmail.com"),
                           ),
                           ListTile(
                             leading: Icon(Icons.phone),
                             title: Text("Phone"),
-                            subtitle: Text("99--99876-56"),
+                            subtitle: Text("012345678"),
                           ),
                           ListTile(
                             leading: Icon(Icons.person),
@@ -199,16 +199,51 @@ class Avatar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CircleAvatar(
-      radius: radius + borderWidth,
-        backgroundColor: borderColor,
-      child: CircleAvatar(
-        radius: radius,
-        backgroundColor: backgroundColor != null ? backgroundColor: Theme.of(context).primaryColor,
-        child: CircleAvatar(
-          radius: radius - borderWidth,
-          backgroundImage: image,
-        ),
+    return Container(
+      width: 150,
+      child: Stack(
+        children: <Widget>[
+          Center(
+            child: CircleAvatar(
+              radius: radius + borderWidth,
+              backgroundColor: borderColor,
+              child: CircleAvatar(
+                radius: radius,
+                backgroundColor: backgroundColor != null ? backgroundColor: Theme.of(context).primaryColor,
+                child: CircleAvatar(
+                  radius: radius - borderWidth,
+                  backgroundImage: image,
+                ),
+              ),
+            ),
+          ),
+          Positioned(
+            bottom: 0.0,
+            right: 0.0,
+            child: Container(
+              height: 30,
+              child: MaterialButton(
+                shape: CircleBorder(),
+                color: Colors.white,
+                child: Icon(Icons.camera_alt, color: Colors.deepPurpleAccent, size: 20,),
+                onPressed: (){},
+              ),
+            ),
+          ),
+          Positioned(
+            bottom: 0.0,
+            left: 0.0,
+            child: Container(
+              height: 30,
+              child: MaterialButton(
+                shape: CircleBorder(),
+                color: Colors.white,
+                child: Icon(Icons.stars, color: Colors.orange,),
+                onPressed: (){},
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
