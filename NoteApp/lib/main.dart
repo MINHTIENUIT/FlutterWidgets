@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:NoteApp/Items_page.dart';
 import 'package:NoteApp/edit_profile_page.dart';
 import 'package:NoteApp/login_page.dart';
 import 'package:NoteApp/profile_page.dart';
@@ -41,7 +42,8 @@ class MyApp extends StatelessWidget {
         LoginPage.route: (context) => LoginPage(),
         SignUpPage.route: (context) => SignUpPage(),
         ProfilePage.route: (context) => ProfilePage(),
-        EditProfile.route: (context) => EditProfile()
+        EditProfile.route: (context) => EditProfile(),
+        Items.route: (context) => Items()
       },
     );
   }
@@ -66,7 +68,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final widgets = [LoginPage.route, SignUpPage.route, ProfilePage.route];
+  final widgets = [LoginPage.route, SignUpPage.route, ProfilePage.route, Items.route];
 
 
   @override
